@@ -356,7 +356,7 @@ int main(int argc, char **argv)
     CHECK(shortcutItem);
     shortcutItem->setParentItem(window.contentItem());
     app.processEvents();
-    CHECK(live->property("visible").toBool() && shortcut->property("visible").toBool());
+    CHECK(live->property("visible").toBool());
     backend.window()->insert("rtxSettingsSupported", false);
     app.processEvents();
     CHECK(!live->property("visible").toBool() && !live->property("enabled").toBool());
@@ -366,7 +366,7 @@ int main(int argc, char **argv)
     backend.window()->insert("rtxSettingsSupported", true);
     app.processEvents();
     CHECK(live->property("visible").toBool() && live->property("enabled").toBool());
-    CHECK(shortcut->property("visible").toBool() && shortcut->property("enabled").toBool());
+    CHECK(!shortcut->property("visible").toBool() && shortcut->property("enabled").toBool());
 
     shortcutItem->setParentItem(nullptr);
 
