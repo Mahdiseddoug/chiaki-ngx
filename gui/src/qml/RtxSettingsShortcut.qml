@@ -7,7 +7,7 @@ import "controls" as C
 RowLayout {
     id: row
     objectName: "rtxSettingsShortcutRow"
-    visible: Chiaki.window.rtxSettingsSupported
+    visible: false
     enabled: Chiaki.window.rtxSettingsSupported
     signal captureRequested()
     signal focusRequested(var control)
